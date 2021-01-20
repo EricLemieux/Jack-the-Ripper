@@ -12,9 +12,9 @@ install:
 	udevadm control --reload
 
 	# Install systemd service
-	install service/jack-the-ripper.service /etc/systemd/system/
+	install systemd/* /etc/systemd/system/
 	systemctl daemon-reload
 
 	# Install the script
 	mkdir -p $(INSTALL_DIR)
-	install src/jack-the-ripper.sh $(INSTALL_DIR)
+	install src/* $(INSTALL_DIR)

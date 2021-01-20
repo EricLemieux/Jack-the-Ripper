@@ -8,5 +8,6 @@ build:
 .PHONY: install
 install:
 	install udev/51-jack-the-ripper.rules $(UDEV_RULES_DIR)
+	udevadm control --reload
 	mkdir -p $(INSTALL_DIR)
 	install src/jack-the-ripper.sh $(INSTALL_DIR)

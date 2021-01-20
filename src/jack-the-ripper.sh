@@ -17,12 +17,22 @@ function log::error() { echo "$(log::_timestamp) [ERROR] $*" >> "${LOG_FILE}"; }
 # Rip the disc in order to archive the contents
 function rip_disc() {
   local disc_name="${ID_FS_LABEL:-}"
+
+  if [[ -z "${disc_name}" ]]; then
+    log::error "Disc name was detected as empty, a human needs to investigate"
+    exit 1
+  fi
+
   local working_dir="${INGEST_DIRECTORY}/${disc_name}"
   log::info "Detected name of the disc is ${disc_name} will save to ${working_dir}"
 
-  # TODO: Actually do the ripping
+  makemkvcon mkv disc:0 all "${working_dir}"
 
-  # TODO: Eject the disc
+  # Sleep for a short period of time to hopefully ensure that MakeMKV is done processing
+  sleep 10
+
+  # Eject the disc to show the user that we are done
+  eject /dev/sr0
 }
 
 # Main entry point

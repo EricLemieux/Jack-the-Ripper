@@ -13,6 +13,7 @@ install:
 
 	# Install systemd service
 	install service/jack-the-ripper.service /etc/systemd/system/
+	systemctl daemon-reload
 
 	# Install the script
 	mkdir -p $(INSTALL_DIR)

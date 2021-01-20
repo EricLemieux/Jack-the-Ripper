@@ -1,1 +1,1 @@
-ACTION=="change", KERNEL=="sr0", ENV{SYSTEMD_WANTS}="jack-the-ripper.service"
+ACTION=="change", ENV{DEVNAME}=="/dev/sr0", TAG+="systemd", ENV{SYSTEMD_WANTS}="jack-the-ripper@%E{DEVNAME}.service"

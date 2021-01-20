@@ -42,6 +42,7 @@ rip_disc() {
 # Main entry point
 main() {
   log_info "Starting to process disc drive event"
+  log_info "$@"
 
   dvd="${ID_CDROM_MEDIA_DVD:-}"
   bluray="${ID_CDROM_MEDIA_BD:-}"

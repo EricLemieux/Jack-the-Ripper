@@ -1,1 +1,1 @@
-ACTION=="change", KERNEL=="sr0", RUN+="echo /opt/jack-the-ripper/wrapper.sh | /usr/bin/at now"
+ACTION=="change", KERNEL=="sr0", ENV{SYSTEMD_WANTS}="jack-the-ripper.service"

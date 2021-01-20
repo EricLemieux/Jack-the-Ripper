@@ -1,0 +1,1 @@
+ACTION=="change", KERNEL=="sr0", RUN+="/opt/jack-the-ripper/jack-the-ripper.sh"

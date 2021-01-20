@@ -42,7 +42,14 @@ rip_disc() {
 # Main entry point
 main() {
   log_info "Starting to process disc drive event"
-  log_info "$@"
+
+  if [ -z "${1}" ]; then
+    log_error "Device name was not set, cannot query udev for the required information, will assume that it's not something that we want to process"
+    exit 0
+  fi
+
+  # Export the environment variables
+  eval "$(udevadm info --query=env --export "${1}")"
 
   dvd="${ID_CDROM_MEDIA_DVD:-}"
   bluray="${ID_CDROM_MEDIA_BD:-}"

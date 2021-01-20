@@ -1,1 +1,1 @@
-ACTION=="change", KERNEL=="sr0", RUN+="/usr/bin/at -M -f /opt/jack-the-ripper/wrapper.sh now"
+ACTION=="change", KERNEL=="sr0", RUN+="echo /opt/jack-the-ripper/wrapper.sh | /usr/bin/at now"

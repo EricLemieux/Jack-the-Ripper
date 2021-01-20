@@ -27,7 +27,7 @@ function rip_disc() {
   log::info "Detected name of the disc is ${disc_name} will save to ${working_dir}"
 
   mkdir -p "${working_dir}"
-  makemkvcon mkv disc:0 all "${working_dir}" >> "${LOG_FILE}" 2>&1
+  makemkvcon --robot mkv disc:0 all "${working_dir}" >> "${LOG_FILE}" 2>&1
 
   # Sleep for a short period of time to hopefully ensure that MakeMKV is done processing
   sleep 10

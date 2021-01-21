@@ -1,3 +1,5 @@
 [Service]
+User=eric
+Group=eric
 Type=oneshot
 ExecStart=/opt/jack-the-ripper/jack-the-ripper.sh %I

@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 #
 # Determine if a DVD or BluRay has been inserted into the disc drive, and if it has rip the content into a location for
 # further processing.
@@ -52,7 +52,7 @@ main() {
   dvd="${ID_CDROM_MEDIA_DVD:-}"
   bluray="${ID_CDROM_MEDIA_BD:-}"
 
-  if [ "${bluray}" -eq "1" ] || [ "${dvd}" -eq "1" ]; then
+  if [[ "${bluray}" = "1" || "${dvd}" = "1" ]]; then
     log_info "It's a dvd or bluray, we should archive it"
     rip_disc
     log_info "Completed ripping the disc"

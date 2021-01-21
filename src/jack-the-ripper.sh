@@ -28,9 +28,7 @@ rip_disc() {
 
   mkdir -p "${working_dir}"
 
-  # Disabling for the purpose of testing
-  # TODO: Re-enable
-  # makemkvcon --robot mkv disc:0 all "${working_dir}" >> "${LOG_FILE}" 2>&1
+  makemkvcon --robot mkv disc:0 all "${working_dir}" >> "${LOG_FILE}" 2>&1
 
   # Sleep for a short period of time to hopefully ensure that MakeMKV is done processing
   sleep 10

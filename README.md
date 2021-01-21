@@ -6,3 +6,7 @@ This was more about me learning rather than building an extensible tool, there a
 * https://github.com/automatic-ripping-machine/automatic-ripping-machine
 
 With that said I don't expect this to work on anything outside my hardware.
+
+## TODO:
+
+* Determine what the service name should be so that it can be more dynamic
